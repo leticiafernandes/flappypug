@@ -3,6 +3,7 @@ function Pug() {
   this.horizontal = 25;
 
   this.gravity = 1;
+  this.lift = -15; // how strong is lift level
   this.velocity = 0;
 
   this.show = function () {
@@ -11,7 +12,7 @@ function Pug() {
   }
 
   this.up = function () {
-    this.velocity += -this.gravity;
+    this.velocity += this.lift;
   }
 
   this.update = function() {
