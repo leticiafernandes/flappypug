@@ -1,18 +1,25 @@
-let bird;
+let pug;
+let pipes = [];
 
 function setup() {
   createCanvas(400, 600);
-  bird = new Bird();
+  pug = new Pug();
+  pipes.push(new Pipe());
 }
 
 function draw() {
   background(0);
-  bird.update();
-  bird.show();
+  pug.update();
+  pug.show();
+
+  for(var i=0; i < pipes.length; i++){
+    pipes[i].show();
+    pipes[i].update();
+  }
 }
 
 function keyPressed() {
   if (key == ' ') {
-    bird.up();
+    pug.up();
   }
 }
